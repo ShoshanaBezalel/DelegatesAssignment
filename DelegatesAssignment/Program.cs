@@ -5,8 +5,10 @@ Console.WriteLine("Hello, World!");
 
 PositivesManager positivesManager = new PositivesManager();
 
-Positives userCase = UserInputHandler.GetUser();
-
-positivesManager.AddPositives(userCase);
+for(int i = 0; i < 3; i++)
+{
+    Positives userCase = UserInputHandler.GetUser();
+    positivesManager.AddPositives(userCase);
+}
 
 positivesManager.DisplayPositives();

@@ -17,6 +17,9 @@ namespace DelegatesAssignment
 
         public void DisplayPositives()
         {
+            SortPositives sorter = new SortPositives();
+            sorter.Sort(positiveCases);
+
             Console.WriteLine("Positives Details:");
 
             foreach (var positiveCase in positiveCases)
@@ -24,5 +27,6 @@ namespace DelegatesAssignment
                 Console.WriteLine($"Name: {positiveCase.Name} | Age: {positiveCase.Age} | Get the virus on: {positiveCase.DateOfGettingVirus} | Get virus test on: {positiveCase.DateOfTest} | Variant type: {positiveCase.VariantType}");
             }
         }
+
     }
 }

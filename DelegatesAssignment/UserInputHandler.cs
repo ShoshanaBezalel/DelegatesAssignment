@@ -26,7 +26,6 @@ namespace DelegatesAssignment
 
             Console.WriteLine("What is your virus variant type? ");
             userCase.VariantType = Console.ReadLine();
-
             return userCase;
         }
     }

@@ -10,7 +10,7 @@ namespace DelegatesAssignment
     {
         delegate int PositivesComprasionDelegate(Positives x, Positives y);
 
-        private static void Sort()
+        public void Sort(List<Positives> positiveCases)
         {
             Console.WriteLine("Choose a sorting option:");
             Console.WriteLine("1. Sort by Name");
@@ -19,25 +19,30 @@ namespace DelegatesAssignment
 
             if(int.TryParse(Console.ReadLine(), out int userChoice))
             {
-                PositivesComprasionDelegate comprasionDelegate = null;
+                PositivesComprasionDelegate comparisonDelegate = null;
 
                 switch(userChoice)
                 {
                     case 1:
-                        comprasionDelegate = (x, y) => x.Name.CompareTo(y.Name);
+                        comparisonDelegate = (x, y) => x.Name.CompareTo(y.Name);
                         break;
                     case 2:
-                        comprasionDelegate = (x, y) => x.DateOfBirth.CompareTo(y.DateOfBirth);
+                        comparisonDelegate = (x, y) => x.DateOfBirth.CompareTo(y.DateOfBirth);
                         break;
                     case 3:
-                        comprasionDelegate = (x, y) => x.DateOfGettingVirus.CompareTo(y.DateOfGettingVirus);
+                        comparisonDelegate = (x, y) => x.DateOfGettingVirus.CompareTo(y.DateOfGettingVirus);
                         break;
 
                     default:
                         Console.WriteLine("Inavalid choice!!");
                         break;
                 }
+                if(comparisonDelegate != null)
+                {
+                    positiveCases.Sort((x, y) => comparisonDelegate(x, y));
+                }
             }
+            else Console.WriteLine("Invalid input!");
         }
 
     }

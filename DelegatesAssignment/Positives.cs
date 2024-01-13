@@ -15,6 +15,5 @@ namespace DelegatesAssignment
         public int Age => DateTime.Now.Year - DateOfBirth.Year;
         public string VariantType { get; set; }
 
-
     }
 }
