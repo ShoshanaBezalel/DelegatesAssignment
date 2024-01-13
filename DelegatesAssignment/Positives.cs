@@ -12,13 +12,7 @@ namespace DelegatesAssignment
         public DateTime DateOfBirth { get; set; }
         public DateTime DateOfGettingVirus { get; set; }
         public DateTime DateOfTest { get; set; }
-        public int Age
-        {
-            get
-            {
-                return DateTime.Now.Year - DateOfBirth.Year;
-            }
-        }
+        public int Age => DateTime.Now.Year - DateOfBirth.Year;
         public string VariantType { get; set; }
 
 
